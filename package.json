@@ -3,9 +3,7 @@
   "version": "0.0.0",
   "description": "Wrapper functions for key generation according to the Urbit hierarchical wallet design.",
   "main": "index.js",
-  "scripts": {
-    "test": "node test/main.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/urbit/keygen-js.git"
@@ -20,10 +18,27 @@
   },
   "homepage": "https://github.com/urbit/keygen-js#readme",
   "devDependencies": {
-    "test": "^0.6.0"
+    "babel-core": "^6.26.3",
+    "chai": "^3.5.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.8",
+    "mocha": "^3.1.2",
+    "rollup": "^0.64.1",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-root-import": "^0.2.3",
+    "rollup-stream": "^1.24.1",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.0.0-rc.1",
     "argon2-wasm": "git+https://git@github.com/urbit/argon2-wasm.git",
+    "babel-preset-env": "^1.7.0",
     "bip32": "^1.0.2",
     "hmac-drbg": "^1.0.1",
     "isomorphic-webcrypto": "^1.6.0",

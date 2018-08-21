@@ -1,7 +1,9 @@
-const crypto = require('isomorphic-webcrypto');
-const bip32 = require('bip32');
-const nacl = require('tweetnacl');
-const argon2 = require('argon2-wasm');
+import crypto from 'isomorphic-webcrypto'
+import {argon2} from 'argon2-wasm'
+// import {bip32} from 'bip32'
+let bip32 = require('bip32')
+let nacl = require('tweetnacl')
+
 
 const buf2hex = buffer => {
   return Array.from(new Uint8Array(buffer))

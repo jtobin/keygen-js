@@ -8,7 +8,7 @@ const {
   _buf2hex,
   _hash,
   _argon2u,
-} = require('../index-g.js')
+} = require('../dist/index.js')
 
 exports['test synchronous'] = assert => {
 
