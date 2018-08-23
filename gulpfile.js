@@ -1,33 +1,27 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
-    connect = require('gulp-connect'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
     babel = require('gulp-babel'),
     rollup = require('rollup-stream'),
     babel = require('rollup-plugin-babel'),
     builtins = require('rollup-plugin-node-builtins'),
     resolve = require('rollup-plugin-node-resolve'),
     source = require('vinyl-source-stream'),
+    commonjs = require('rollup-plugin-commonjs'),
     rootImport = require('rollup-plugin-root-import');
-
 
 var cache
 
 gulp.task('default', function(cb) {
   return rollup({
     input: './src/index.js',
+    name: "keygen",
     cache: cache,
     format: "umd",
     plugins: [
       babel({
-        ignore: ['src/js/vendor/**', 'node_modules/**']
+        ignore: ['node_modules/**']
       }),
-      rootImport({
-        root: `${__dirname}/src/`,
-        useEntry: 'prepend',
-        extensions: '.js'
-      }),
+      commonjs(),
       builtins(),
       resolve()
     ]
